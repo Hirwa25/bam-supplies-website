@@ -795,3 +795,11 @@ footer hr{
         height: 220px;
     }
 }
+
+/*------------------- contact us page ------------------*/
+
+.phone-icon {
+    width: 24px;
+    height: 24px;
+    color: #D31817;
+}
