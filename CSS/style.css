@@ -617,7 +617,7 @@ footer hr{
 /*------------------- about us page ------------------*/
 
 #About{
-    background-image: linear-gradient(rgba(9, 19, 71, 0.5), rgba(9, 19, 71, 0.5)), url("../images/about\ us\ unsplash.jpg");
+    background-image: linear-gradient(rgba(9, 19, 71, 0.7), rgba(9, 19, 71, 0.7)), url("../images/about\ us\ unsplash.jpg");
      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
     height: 100vh;
@@ -628,7 +628,7 @@ footer hr{
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 220px;
+    padding-top: 60px;
     font-family: "Poppins", sans-serif;
     
 }
@@ -642,6 +642,14 @@ footer hr{
 #About span{
     color: #D31817;
     font-size: 2.8rem;
+}
+
+#About p{
+    width: 50%;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 25px;
+    margin-top: 1.8rem;
 }
 
 .company-highlights{
@@ -802,4 +810,131 @@ footer hr{
     width: 24px;
     height: 24px;
     color: #D31817;
+}
+
+#contact{
+    background-image: linear-gradient(rgba(9, 19, 71, 0.7), rgba(9, 19, 71, 0.7)), url("../images/6\ JFG\ Image\ 2025-10-05\ at\ 19.30.34.jpeg");
+     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+#contact h2{
+    color: white;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+}
+
+#contact span{
+    color: #D31817;
+    font-size: 2.8rem;
+}
+
+#contact p{
+    width: 50%;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 25px;
+    margin-top: 1.8rem;
+}
+
+.contact-page {
+    background: #EAE7E7;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 60px 8%;
+}
+
+.contact-form-card ,
+.contact-details-card {
+    background: white;
+    padding: 32px;
+    border-radius: 6px;
+}
+
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder {
+    color: #b8b8b8;
+}
+
+.contact-form-card textarea {
+    height: 140px;
+    resize: none;
+}
+
+.btn-submit {
+    width: fit-content;
+    background: #D31817;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.contact-details-card h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.contact-details-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+
+}
+
+.info-item i {
+    color: #D31817;
+    font-size: 16px;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
 }
