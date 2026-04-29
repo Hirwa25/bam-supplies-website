@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/lo-removebg-preview 1.png" alt="logo do grupo JFG">
+            <img src="images/lo-removebg-preview-1.png" alt="logo do grupo JFG">
             <div class="navigation">
                 <ul>
                     <li><a class="active" href="#">Home</a></li>
@@ -42,26 +42,46 @@
         <p>We Supply as Good as it is</p>
         <div class="btn">
             <a class="red"
-            href="contact">Request Quotation</a>
+            href="contact.html">Request Quotation</a>
         </div>
     </section>
 
-    <section id="about-company">
+    <section id="about-company" class="reveal">
         <div class="fotos">
-            <img src="images/navio1.jpg" alt="Navio 1" class="bottom">
-             <img src="images/navio2.jpg" alt="Navio 2" class="top">
+            <img src="images/navio1.webp" alt="Navio 1" class="bottom">
+             <img src="images/navio2.webp" alt="Navio 2" class="top">
         </div>
 
         <div class="text">
-            <h3>Grupo JFG is Your Trusted Partner <br>
-            in  Ship Chandling in Mozambique.</h3>
+            <h3>Grupo JFG is Your Trusted Partner in  Ship Chandling in Mozambique.</h3>
 
-            <p>From bonded stores like snacks, beverages, and duty <br> free items to deck and engine equipment, safety <br> gear, tools, charts, and full provisions:  fresh, frozen, <br>or dry. we deliver quality, reliability, and five star <br> professionalism to vessels of all kinds and offshore <br> clients.</p>
+            <p>From bonded stores like snacks, beverages, and duty  free items to deck and engine equipment, safety gear, tools, charts, and full provisions:  fresh, frozen, or dry. we deliver quality, reliability, and five star professionalism to vessels of all kinds and offshore clients.</p>
 
             <a href="#" class="btn2">About us</a>
         </div>
     </section>
-    <div class="service-container">
+
+    <!-- Stats Section -->
+     <section id="stats" class="reveal">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3 class="counter" data-target="500">0</h3>
+                <span class="stat-plus">+</span>
+                <p>Vessels Served</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="10">0</h3>
+                <span class="stat-plus">+</span>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="100">0</h3>
+                <span class="stat-plus">+</span>
+                <p>Product supplied</p>
+            </div>
+        </div>
+     </section>
+    <div class="service-container reveal">
          <h2>Our Services</h2>
          
         <div class="cards">
@@ -102,7 +122,7 @@
 
     <!-- ports we serve -->
 
-    <div id="ports-serve">
+    <div id="ports-serve" class="reveal">
         <div class="overlay"></div>
 
         <div class="ports-serve-content">
@@ -117,7 +137,7 @@
         </div>
     </div>
 
-    <section id="membership">
+    <section id="membership" class="reveal">
         <div class="membership-container">
            <span class="title">Membership:</span>
 
@@ -145,12 +165,12 @@
                 
                 <div class="contact-items">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>AV Emilia Dausse</span>
+                    <span>AV. 24 de Julho, N629, R/C</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>jgroup@jfg.com</span>
+                    <span>jfgroup@jfg.co.mz</span>
                 </div>
 
                 <div class="contact-items">
@@ -187,10 +207,70 @@
     </footer>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
-        const navigation = document.querySelector('.navigation');
+    const navigation = document.querySelector('.navigation');
+    menuToggle.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+    });
 
-        menuToggle.addEventListener('click', () => {
-            navigation.classList.toggle('active')
+    // Debug reveal
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target)
+            }
+        });
+    }, { 
+        threshold: 0,
+        rootMargin: '0px 0px -80px 0px'
+    });
+    revealElements.forEach(el => observer.observe(el));
+
+    const counters = document.querySelectorAll('.counter');
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = +entry.target.getAttribute('data-target');
+            const duration = 1500;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const update = () => {
+                current += step;
+                if (current < target) {
+                    entry.target.textContent = Math.floor(current);
+                    requestAnimationFrame(update);
+                } else {
+                    entry.target.textContent = target;
+                }
+            };
+            update();
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => counterObserver.observe(counter));
+
+                // Nav on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 80) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('#Home');
+            if (hero) {
+                hero.style.backgroundPositiony = window.scrolly * 0.5 + 'px';
+            }
         });
     </script>
 </body>

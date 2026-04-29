@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/lo-removebg-preview 1.png" alt="logo do grupo JFG">
+            <img src="images/lo-removebg-preview-1.png" alt="logo do grupo JFG">
             <div class="navigation">
                 <ul>
                     <li><a  href="index.html">Home</a></li>
@@ -40,38 +40,41 @@
     </section>
 
 
-<Section class="contact-page">
+<section class="contact-page reveal">
     
-        <div class="contact-form-card">
-            <form action="#">
-                <input type="text" placeholder="Write your name here"/>
-                <input type="text" placeholder="Write your email here">
-                 <input type="text" placeholder="Write your Subject here">
-                 <textarea rows="6" placeholder="write your massage here"></textarea>
-                 <button class="btn-submit" type="submit">Submit</button>
-            </form>
+   <div class="contact-form-card">
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Write your name here" required/>
+            <input type="text" id="email" placeholder="Write your email here" required>
+            <input type="text" id="subject" placeholder="Write your subject here">
+            <textarea rows="6" id="message" placeholder="Write your message here"></textarea>
+            <input type="file" id="attachment" accept="*/*">
+            <button class="btn-submit" type="submit">Submit</button>
+        </form>
+        <p id="formMessage" style="margin-top: 12px; font-size: 14px;"></p>
+    </div>
+
+    <div class="contact-details-card">
+        <h3>Get in Touch</h3>
+        <p>We are here to help you, if you have any question let us help.</p>
+
+        <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+258 86 404 0518</span>
         </div>
 
-        <div class="contact-details-card">
-            <h3>Get in Touch</h3>
-            <p>We are here to help you, if you have any question let us help.</p>
-
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>+258 86 404 0518</span>
-            </div>
-
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>jfgroup@jfg.co.mz</span>
-            </div>
-
-            <div class="info-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Av. Eduardo Mondlane, Maputo</span>
-            </div>
+        <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>jfgroup@jfg.co.mz</span>
         </div>
-</Section>
+
+        <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Av. Eduardo Mondlane, Maputo</span>
+        </div>
+    </div>    
+
+</section>
 
 <section class="map-section">
    <iframe src="https://www.google.com/maps?q=Av.+Eduardo+Mondlane,+Maputo&z=15&output=embed" 
@@ -100,12 +103,12 @@
                 
                 <div class="contact-items">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>AV Emilia Dausse</span>
+                    <span>AV. 24 de Julho, N629, R/C</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>jgroup@jfg.com</span>
+                    <span>jfgroup@jfg.co.mz</span>
                 </div>
 
                 <div class="contact-items">
@@ -147,6 +150,81 @@
         menuToggle.addEventListener('click', () => {
             navigation.classList.toggle('active')
         });
+
+                // Debug reveal
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target)
+                    }
+                });
+            }, { 
+                threshold: 0,
+                rootMargin: '0px 0px -80px 0px'
+            });
+            revealElements.forEach(el => observer.observe(el));
+            
+            // Nav on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 80) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+                // Parallax effect
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('#contact');
+            if (hero) {
+                hero.style.backgroundPositionY = window.scrollY * 0.5 + 'px';
+            }
+        });
+
+        // Contact form submission
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formMessage = document.getElementById('formMessage');
+    formMessage.textContent = 'Sending...';
+    formMessage.style.color = 'gray';
+
+    const formData = new FormData();
+    formData.append('name', document.getElementById('name').value);
+    formData.append('email', document.getElementById('email').value);
+    formData.append('subject', document.getElementById('subject').value);
+    formData.append('message', document.getElementById('message').value);
+
+    const attachment = document.getElementById('attachment').files[0];
+    if (attachment) {
+        formData.append('attachment', attachment);
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/send', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            formMessage.textContent = '✅ Message sent successfully!';
+            formMessage.style.color = 'green';
+            document.getElementById('contactForm').reset();
+        } else {
+            formMessage.textContent = '❌ Failed to send. Please try again.';
+            formMessage.style.color = 'red';
+        }
+    } catch (error) {
+        formMessage.textContent = '❌ Server error. Make sure the server is running.';
+        formMessage.style.color = 'red';
+    }
+});
     </script>
 </body>
 </html>

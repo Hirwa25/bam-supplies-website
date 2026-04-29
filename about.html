@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/lo-removebg-preview 1.png" alt="logo do grupo JFG">
+            <img src="images/lo-removebg-preview-1.png" alt="logo do grupo JFG">
             <div class="navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -38,27 +38,27 @@
 
     <section id="About">
         <h2>JFG <span class="doublequotes">//</span> About Us </h2> 
-        <p>We Supply as Good as it is</p>
+        <p>We supply as good as it is</p>
 
     </section>
 
     <section id="about-company">
         <div class="fotos">
-            <img src="images/navio1.jpg" alt="Navio 1" class="bottom">
-             <img src="images/navio2.jpg" alt="Navio 2" class="top">
+            <img src="images/navio1.webp" alt="Navio 1" class="bottom">
+             <img src="images/navio2.webp" alt="Navio 2" class="top">
         </div>
 
         <div class="text">
-            <h3>Grupo JFG is Your Trusted Partner <br>
+            <h3>Grupo JFG is Your Trusted Partner
             in  Ship Chandling in Mozambique.</h3>
 
-            <p>From bonded stores like snacks, beverages, and duty <br> free items to deck and engine equipment, safety <br> gear, tools, charts, and full provisions:  fresh, frozen, <br>or dry. we deliver quality, reliability, and five star <br> professionalism to vessels of all kinds and offshore <br> clients.</p>
+            <p>From bonded stores like snacks, beverages, and duty free items to deck and engine equipment, safety gear, tools, charts, and full provisions:  fresh, frozen, or dry. we deliver quality, reliability, and five star professionalism to vessels of all kinds and offshore clients.</p>
 
             <a href="#" class="btn2">Contact Us</a>
         </div>
     </section>
     
-    <section class="company-highlights">
+    <section class="company-highlights reveal">
         <div class="highlight-row">
             <div class="highlight-text">
                 <h2>Our Mission</h2>
@@ -68,14 +68,14 @@
             </div>
             
             <div class="highlight-image">
-                <img src="images/pexels-pixabay-275637.jpg" alt="Marine rope and dock equipment">
+                <img src="images/pexels-pixabay-275637.webp" alt="Marine rope and dock equipment">
             </div>
         </div> 
         
         <div class="vision-section" >
             <div class="highlight-row white-row">
                 <div class="highlight-image">
-                    <img src="images/pexels-didsss-11467925.jpg" alt="">
+                    <img src="images/pexels-didsss-11467925.webp" alt="">
                 </div>
                 
                 <div class="highlight-text">
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-    <section class="values-section">
+    <section class="values-section reveal">
         <div class="values-container">
             <h2 class="values-title">Our Values</h2>
 
@@ -165,12 +165,12 @@
                 
                 <div class="contact-items">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>AV Emilia Dausse</span>
+                    <span>AV. 24 de Julho, N629, R/C</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>jgroup@jfg.com</span>
+                    <span>jfgroup@jfg.co.mz</span>
                 </div>
 
                 <div class="contact-items">
@@ -211,6 +211,40 @@
 
         menuToggle.addEventListener('click', () => {
             navigation.classList.toggle('active')
+        });
+
+            // Debug reveal
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target)
+            }
+        });
+    }, { 
+        threshold: 0,
+        rootMargin: '0px 0px -80px 0px'
+    });
+    revealElements.forEach(el => observer.observe(el));
+
+                // Nav on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 80) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+                // Parallax effect
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('#About');
+            if (hero) {
+                hero.style.backgroundPositionY = window.scrollY * 0.5 + 'px';
+            }
         });
     </script>
 </body>
