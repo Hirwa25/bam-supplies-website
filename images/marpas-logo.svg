@@ -1,0 +1,5 @@
+<svg width="160" height="50" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5,30 Q18,12 31,30" fill="none" stroke="#00AEEF" stroke-width="4" stroke-linecap="round"/>
+  <path d="M11,36 Q24,18 37,36" fill="none" stroke="#00AEEF" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  <text x="45" y="32" font-family="Arial Black, Arial" font-size="22" font-weight="900" fill="#1a2d4d" letter-spacing="1">MARPAS</text>
+</svg>

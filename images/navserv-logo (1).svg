@@ -1,0 +1,7 @@
+<svg width="160" height="50" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5,35 L12,15 L17,25 L22,10 L27,35 Z" fill="#003087"/>
+  <path d="M3,38 L29,38 Q28,42 16,42 Q4,42 3,38Z" fill="#003087" opacity="0.4"/>
+  <text x="36" y="28" font-family="Arial Black, Arial" font-size="18" font-weight="900" fill="#003087" letter-spacing="1">NAVSERV</text>
+  <line x1="36" y1="33" x2="155" y2="33" stroke="#cc0000" stroke-width="1.5"/>
+  <text x="36" y="43" font-family="Arial, sans-serif" font-size="7.5" fill="#555" letter-spacing="0.8">NAVAL SERVICES NETWORK</text>
+</svg>

@@ -41,7 +41,8 @@ nav{
 }
 
 nav img{
-    width: 60px;
+    height: 55px;
+    width: auto;
     cursor: pointer;
 }
 
@@ -814,7 +815,7 @@ footer hr{
 }
 
 #contact{
-    background-image: linear-gradient(rgba(9, 19, 71, 0.7), rgba(9, 19, 71, 0.7)), url("../images/6\ JFG\ Image\ 2025-10-05\ at\ 19.30.34.jpeg");
+    background-image: linear-gradient(rgba(9, 19, 71, 0.7), rgba(9, 19, 71, 0.7)), url("../images/david-new-unsplash.webp");
      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
     height: 100vh;
@@ -1037,9 +1038,23 @@ nav img {
 }
 
 nav.scrolled img {
-    width: 45px;
+    height: 45px;
+    width: auto;
 }
 
+nav.scrolled .phone-icon {
+    width: 18px;
+    height: 18px;
+}
+
+nav.scrolled .call-text .label {
+    font-size: 12px;
+}
+
+nav.scrolled .call-text a {
+    font-size: 12px;
+}
+ 
 /*---- Card Hover Effects ----*/
 
 .services {
@@ -1051,4 +1066,45 @@ nav.scrolled img {
     transform: translatey(-8px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
    
+}
+
+/* ---- Lightbox ---- */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.gallery img {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.gallery img:hover {
+    opacity: 0.8;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo JFG</title>
+    <title>BAM Supplies</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/lo-removebg-preview-1.png" alt="logo do grupo JFG">
+            <img src="images/bam-logo.svg" alt="BAM Supplies logo">
             <div class="navigation">
                 <ul>
                     <li><a  href="index.html">Home</a></li>
@@ -24,7 +24,7 @@
                 <img src="images/phone-icone.svg" alt="Phone phone-icone" class="phone-icon">
                 <div class="call-text">
                     <span class="label">Call us now</span>
-                    <a href="tel:+258864040518">+258 86 404 0518</a>
+                    <a href="tel:+258864040518">+258 87 583 6550</a>
                 </div>
             </div>
 
@@ -35,8 +35,8 @@
             </nav>
     </header>
    <section id="contact">
-        <h2>JFG <span class="doublequotes">//</span> Contact Us </h2>
-        <p>We Supply as Good as it is</p>
+        <h2>BAM <span class="doublequotes">//</span> Contact Us </h2>
+        <p>Anchored in Quality, Delivered with Excellence</p>
     </section>
 
 
@@ -60,12 +60,12 @@
 
         <div class="info-item">
             <i class="fa-solid fa-phone"></i>
-            <span>+258 86 404 0518</span>
+            <span>+258 87 583 6550</span>
         </div>
 
         <div class="info-item">
             <i class="fa-solid fa-envelope"></i>
-            <span>jfgroup@jfg.co.mz</span>
+            <span>bamsupplies@bam.co.mz</span>
         </div>
 
         <div class="info-item">
@@ -103,17 +103,17 @@
                 
                 <div class="contact-items">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>AV. 24 de Julho, N629, R/C</span>
+                    <span>Av. Eduardo Mondlane, Maputo</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>jfgroup@jfg.co.mz</span>
+                    <span>bamsupplies@bam.co.mz</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-phone"></i>
-                    <span>+258 86404 0518</span>
+                    <span>+258 87 583 6550</span>
                 </div>
 
             </div>
@@ -121,10 +121,10 @@
             <div class="footer-col">
                 <h4>Gallery</h4>
                 <div class="gallery">
-                    <img src="images/1 JFG Image 2025-10-05 at 19.30.33.jpeg" alt="">
-                    <img src="images/2 JFG Image 2025-10-05 at 19.30.34 (1).jpeg" alt="">
-                    <img src="images/4 JFG Image 2025-10-05 at 19.30.34 (3).jpeg" alt="">
-                    <img src="images/5 JFG Image 2025-10-05 at 19.30.34 (4).jpeg" alt="">
+                    <img src="images/haberdoedas-new-unsplash.webp" alt="" loading="lazy" onclick="openLightbox(this.src)">
+                    <img src="images/jack-new-unsplash.webp" alt="" loading="lazy" onclick="openLightbox(this.src)">
+                    <img src="images/bernd-new.webp" alt="" loading="lazy" onclick="openLightbox(this.src)">
+                    <img src="images/andy-new.webp" alt="" loading="lazy" onclick="openLightbox(this.src)" >
                </div>
             </div>
             
@@ -140,9 +140,16 @@
         <hr>
         
         <p class="copyright">
-         &copy; 2026 Group JFG. All Rights Reserved   
+         &copy; 2026 BAM Supplies. All Rights Reserved   
         </p>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navigation = document.querySelector('.navigation');
@@ -151,7 +158,7 @@
             navigation.classList.toggle('active')
         });
 
-                // Debug reveal
+                // scroll animations
             const revealElements = document.querySelectorAll('.reveal');
 
             const observer = new IntersectionObserver((entries) => {
@@ -167,7 +174,7 @@
             });
             revealElements.forEach(el => observer.observe(el));
             
-            // Nav on scroll
+            // nav on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 80) {
@@ -186,45 +193,55 @@
         });
 
         // Contact form submission
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    const formMessage = document.getElementById('formMessage');
-    formMessage.textContent = 'Sending...';
-    formMessage.style.color = 'gray';
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = 'Sending...';
+            formMessage.style.color = 'gray';
 
-    const formData = new FormData();
-    formData.append('name', document.getElementById('name').value);
-    formData.append('email', document.getElementById('email').value);
-    formData.append('subject', document.getElementById('subject').value);
-    formData.append('message', document.getElementById('message').value);
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('subject', document.getElementById('subject').value);
+            formData.append('message', document.getElementById('message').value);
 
-    const attachment = document.getElementById('attachment').files[0];
-    if (attachment) {
-        formData.append('attachment', attachment);
-    }
+            const attachment = document.getElementById('attachment').files[0];
+            if (attachment) {
+                formData.append('attachment', attachment);
+            }
 
-    try {
-        const response = await fetch('http://localhost:3000/send', {
-            method: 'POST',
-            body: formData
+            try {
+                const response = await fetch('https://bam-supplies-server.onrender.com', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    formMessage.textContent = 'Message sent successfully!';
+                    formMessage.style.color = 'green';
+                    document.getElementById('contactForm').reset();
+                } else {
+                    formMessage.textContent = 'Failed to send. Please try again.';
+                    formMessage.style.color = 'red';
+                }
+            } catch (error) {
+                formMessage.textContent = 'Server error. Make sure the server is running.';
+                formMessage.style.color = 'red';
+            }
         });
 
-        const result = await response.json();
-
-        if (result.success) {
-            formMessage.textContent = '✅ Message sent successfully!';
-            formMessage.style.color = 'green';
-            document.getElementById('contactForm').reset();
-        } else {
-            formMessage.textContent = '❌ Failed to send. Please try again.';
-            formMessage.style.color = 'red';
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
         }
-    } catch (error) {
-        formMessage.textContent = '❌ Server error. Make sure the server is running.';
-        formMessage.style.color = 'red';
-    }
-});
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
     </script>
 </body>
 </html>

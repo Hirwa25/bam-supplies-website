@@ -1,0 +1,15 @@
+<svg width="380" height="110" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(18, 12)">
+    <circle cx="32" cy="18" r="8" fill="none" stroke="#D31817" stroke-width="3.5"/>
+    <line x1="32" y1="26" x2="32" y2="75" stroke="#D31817" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="14" y1="40" x2="50" y2="40" stroke="#D31817" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M32,75 Q12,75 12,58" fill="none" stroke="#D31817" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M32,75 Q52,75 52,58" fill="none" stroke="#D31817" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="12" cy="58" r="4" fill="#D31817"/>
+    <circle cx="52" cy="58" r="4" fill="#D31817"/>
+  </g>
+  <text x="95" y="62" font-family="Arial Black, Arial" font-weight="900" font-size="46" fill="#091347" letter-spacing="-1">BAM</text>
+  <text x="97" y="82" font-family="Arial, sans-serif" font-weight="600" font-size="15" fill="#D31817" letter-spacing="6">SUPPLIES</text>
+  <line x1="95" y1="89" x2="358" y2="89" stroke="#091347" stroke-width="1" opacity="0.2"/>
+  <text x="95" y="103" font-family="Arial, sans-serif" font-size="10" fill="#888" letter-spacing="2">MARINE · CHANDLING · LOGISTICS</text>
+</svg>

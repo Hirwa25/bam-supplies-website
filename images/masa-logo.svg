@@ -1,0 +1,9 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="38" fill="#1a3a6b"/>
+  <circle cx="40" cy="40" r="33" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <circle cx="40" cy="40" r="28" fill="#1a3a6b"/>
+  <text x="40" y="36" text-anchor="middle" font-family="Arial Black, Arial" font-size="14" font-weight="900" fill="#c9a84c">MASA</text>
+  <text x="40" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.5" fill="white" letter-spacing="0.8">MARINE ASSOCIATION</text>
+  <text x="40" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.5" fill="white" letter-spacing="0.8">OF SHIP AGENTS</text>
+  <path d="M20,62 Q40,57 60,62" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+</svg>

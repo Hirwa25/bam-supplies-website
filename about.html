@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo JFG</title>
+    <title>BAM Supplies</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/lo-removebg-preview-1.png" alt="logo do grupo JFG">
+            <img src="images/bam-logo.svg" alt="BAM Supplies logo">
             <div class="navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,7 +24,7 @@
                  <img src="images/phone-icone.svg" alt="Phone icon" class="phone-icon">
                 <div class="call-text">
                     <span class="label">Call us now</span>
-                    <a href="tel:+258864040518">+258 86 404 0518</a>
+                    <a href="tel:+258864040518">+258 87 583 6550</a>
                 </div>
             </div>
 
@@ -37,8 +37,8 @@
     </header>
 
     <section id="About">
-        <h2>JFG <span class="doublequotes">//</span> About Us </h2> 
-        <p>We supply as good as it is</p>
+        <h2>BAM <span class="doublequotes">//</span> About Us </h2> 
+        <p>Anchored in Quality, Delivered with Excellence</p>
 
     </section>
 
@@ -49,7 +49,7 @@
         </div>
 
         <div class="text">
-            <h3>Grupo JFG is Your Trusted Partner
+            <h3>BAM Supplies is Your Trusted Partner
             in  Ship Chandling in Mozambique.</h3>
 
             <p>From bonded stores like snacks, beverages, and duty free items to deck and engine equipment, safety gear, tools, charts, and full provisions:  fresh, frozen, or dry. we deliver quality, reliability, and five star professionalism to vessels of all kinds and offshore clients.</p>
@@ -165,17 +165,17 @@
                 
                 <div class="contact-items">
                     <i class="fa-solid fa-location-dot"></i>
-                    <span>AV. 24 de Julho, N629, R/C</span>
+                    <span>Av. Eduardo Mondlane, Maputo</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-envelope"></i>
-                    <span>jfgroup@jfg.co.mz</span>
+                    <span>bamsupplies@bam.co.mz</span>
                 </div>
 
                 <div class="contact-items">
                     <i class="fa-solid fa-phone"></i>
-                    <span>+258 86404 0518</span>
+                    <span>+258 87 583 6550</span>
                 </div>
 
             </div>
@@ -183,10 +183,10 @@
             <div class="footer-col">
                 <h4>Gallery</h4>
                 <div class="gallery">
-                    <img src="images/1 JFG Image 2025-10-05 at 19.30.33.jpeg" alt="">
-                    <img src="images/2 JFG Image 2025-10-05 at 19.30.34 (1).jpeg" alt="">
-                    <img src="images/4 JFG Image 2025-10-05 at 19.30.34 (3).jpeg" alt="">
-                    <img src="images/5 JFG Image 2025-10-05 at 19.30.34 (4).jpeg" alt="">
+                    <img src="images/haberdoedas-new-unsplash.webp" alt="" loading="lazy" onclick="openLightbox(this.src)">
+                    <img src="images/jack-new-unsplash.webp" alt="" loading="lazy" onclick="openLightbox(this.src)">
+                    <img src="images/bernd-new.webp" alt="" loading="lazy" onclick="openLightbox(this.src)">
+                    <img src="images/andy-new.webp" alt="" loading="lazy" onclick="openLightbox(this.src)" >
                </div>
             </div>
             
@@ -202,9 +202,16 @@
         <hr>
         
         <p class="copyright">
-         &copy; 2026 Group JFG. All Rights Reserved   
+         &copy; 2026 BAM Supplies. All Rights Reserved   
         </p>
     </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+    
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navigation = document.querySelector('.navigation');
@@ -246,6 +253,16 @@
                 hero.style.backgroundPositionY = window.scrollY * 0.5 + 'px';
             }
         });
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
     </script>
 </body>
 </html>

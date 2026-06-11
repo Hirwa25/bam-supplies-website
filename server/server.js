@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./database');
 
 const app = express();
-const SECRET = 'jfg_secret_2026';
+const SECRET = 'bam_secret_2026';
 
 app.use(cors());
 app.use(express.json());
@@ -32,11 +32,10 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false,
     auth: {
-        user: 'stellandayambaje4@gmail.com',
-        pass: 'mjrtchlwnibcllpt'
-    }
-});
-
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+        }
+    });
 // ---- Middleware to verify login ----
 function authMiddleware(req, res, next) {
     const token = req.headers['authorization'];
@@ -130,10 +129,10 @@ app.post('/send', upload.single('attachment'), async (req, res) => {
     const { name, email, subject, message } = req.body;
     const mailOptions = {
         from: email,
-        to: 'jfgroup@jfg.co.mz',
+        to: process.env.EMAIL_USER,
         subject: subject || 'New message from website',
         html: `
-            <h3>New message from Grupo JFG website</h3>
+            <h3>New message from BAM Supplies website</h3>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Subject:</strong> ${subject}</p>
@@ -154,6 +153,6 @@ app.post('/send', upload.single('attachment'), async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('Server running on port 3000');
 });
