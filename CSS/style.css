@@ -520,6 +520,19 @@ footer hr{
     padding: 15px 20px;
     }
 
+
+    .contact-info {
+        font-size: 11px;
+        }
+
+    .call-text .label {
+        font-size: 11px;
+        }
+
+    .call-text a {
+        font-size: 11px;
+        }
+
     #Home{
         padding-top: 90px;
     }
