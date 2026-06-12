@@ -891,6 +891,11 @@ footer hr{
     resize: none;
 }
 
+#formMessage {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
 .btn-submit {
     width: fit-content;
     background: #D31817;
